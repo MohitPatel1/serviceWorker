@@ -33,3 +33,19 @@ self.addEventListener("install", event => {
       })
    );
 });
+
+const simpleResponse = new Response("Body of the HTTP response");
+
+const options = {
+   status: 200,
+   headers: {
+	'Content-type': 'text/html'
+   }
+};
+const htmlResponse = new Response("<b>HTML</b> content", options)
+
+self.addEventListener('fetch', event => {
+    console.log(event.request.url)
+    //https://static0.gamerantimages.com/wordpress/wp-content/uploads/2023/07/harry-potter-snape-patronus.jpg
+    event.respondWith(htmlResponse)
+})
