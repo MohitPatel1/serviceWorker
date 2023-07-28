@@ -1,25 +1,25 @@
-// if your browser supports service worker
-if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register("/sw.js").then(res=>{
-        // on every reload this function is being called
-        console.log(res)        
-        console.log('service worker registered')
-    })
- }
 
-setTimeout(() => {
-    const img = new Image();
-    img.src = 'always.jpeg';
-    document.body.appendChild(img);
-}, 3000);
 
-// This code executes in its own worker or thread
-self.addEventListener("install", event => {
-    // this event triggers only once the tab is opened
-    // if n tabs are opened, this will be triggered n times on the begining
-    console.log("Service worker installed");
- });
- self.addEventListener("activate", event => { 
-    // this event is not being triggered 
-    console.log("Service worker activated");
- });
+ self.addEventListener('install', event => {
+    console.log('V1 installing…');
+  
+    // cache a cat SVG
+    event.waitUntil(
+      caches.open('static-v1').then(cache => cache.add('/jim-identity-theft.jpg'))
+    );
+  });
+  
+  self.addEventListener('activate', event => {
+    console.log('V1 now ready to handle fetches!');
+  });
+  
+  self.addEventListener('fetch', event => {
+    const url = new URL(event.request.url);
+   console.log({url})
+   console.log(url.origin == location.origin)
+    // serve the cat SVG from the cache if the request is
+    // same-origin and the path is 'jim-identity-theft.jpg'
+    if (url.origin == location.origin && url.pathname == '/jim-as-dwight.jpg') {
+      event.respondWith(caches.match('/jim-identity-theft.jpg'));    
+    }
+  });
