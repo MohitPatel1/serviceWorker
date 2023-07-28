@@ -11,6 +11,10 @@
   
   self.addEventListener('activate', event => {
     console.log('V1 now ready to handle fetches!');
+    // claim event is throws on activate event, it will start passing fetch request through service worker
+    // if not called clients.claim(), the page would require a reload to pass fetch through service worker
+    // should be avoided though, not a good practice
+    clients.claim();
   });
   
   self.addEventListener('fetch', event => {
