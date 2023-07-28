@@ -1,3 +1,4 @@
+// if your browser supports service worker
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register("/sw.js").then(res=>{
         // on every reload this function is being called
@@ -10,7 +11,7 @@ setTimeout(() => {
     const img = new Image();
     img.src = '/always.jpeg';
     document.body.appendChild(img);
-}, 5000);
+}, 3000);
 
 // This code executes in its own worker or thread
 self.addEventListener("install", event => {
