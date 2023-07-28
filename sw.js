@@ -9,7 +9,7 @@ if ('serviceWorker' in navigator) {
 
 setTimeout(() => {
     const img = new Image();
-    img.src = '/always.jpeg';
+    img.src = 'always.jpeg';
     document.body.appendChild(img);
 }, 3000);
 
