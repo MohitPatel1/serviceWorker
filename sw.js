@@ -13,6 +13,12 @@ setTimeout(() => {
     document.body.appendChild(img);
 }, 3000);
 
+setTimeout(() => {
+    const img = new Image();
+    img.src = 'https://static0.gamerantimages.com/wordpress/wp-content/uploads/2023/07/harry-potter-snape-patronus.jpg';
+    document.body.appendChild(img);
+}, 3000);
+
 // This code executes in its own worker or thread
 self.addEventListener("install", event => {
     // this event triggers only once the tab is opened
@@ -45,7 +51,17 @@ const options = {
 const htmlResponse = new Response("<b>HTML</b> content", options)
 
 self.addEventListener('fetch', event => {
+    // for getting image from internet,
+    // on first call it gets cached and trigger fetch event
+    // from second call takes 0ms to load and do not trigger fetch event
+
+    // for getting image from internal folders
+    // on every call it triggers fetch event
+    // on every call it takes more than 1ms time
     console.log(event.request.url)
-    //https://static0.gamerantimages.com/wordpress/wp-content/uploads/2023/07/harry-potter-snape-patronus.jpg
-    event.respondWith(htmlResponse)
+    // event.respondWith(htmlResponse)
+
+    caches.match(event.request.url).then(res => {
+        console.log(res ? res : 'not found in cache')
+    })
 })
