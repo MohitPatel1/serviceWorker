@@ -28,6 +28,7 @@ self.addEventListener("install", event => {
  self.addEventListener("activate", event => { 
     // this event is not being triggered 
     console.log("Service worker activated");
+    clients.claim()
  });
 
 const urlsToCache = ["/", 'sw.js', "index.html", "always.jpeg", "afterAllThisTime.jpeg"];
@@ -59,9 +60,14 @@ self.addEventListener('fetch', event => {
     // on every call it triggers fetch event
     // on every call it takes more than 1ms time
     console.log(event.request.url)
-    // event.respondWith(htmlResponse)
+    event.respondWith(
+        caches.match(event.request)
+        .then(cacheResponse => {
+            return cacheResponse || fetch(event.request);
+        })
+    )
 
-    caches.match(event.request.url).then(res => {
-        console.log(res ? res : 'not found in cache')
-    })
+    // caches.match(event.request.url).then(res => {
+    //     console.log(res ? res : 'not found in cache')
+    // })
 })
