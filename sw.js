@@ -23,3 +23,13 @@ self.addEventListener("install", event => {
     // this event is not being triggered 
     console.log("Service worker activated");
  });
+
+const urlsToCache = ["/", 'sw.js', "index.html", "always.jpeg", "afterAllThisTime.jpeg"];
+self.addEventListener("install", event => {
+   event.waitUntil(
+      caches.open("chamber-of-secrets")
+      .then(cache => {
+         return cache.addAll(urlsToCache);
+      })
+   );
+});
