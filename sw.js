@@ -6,9 +6,16 @@ if ('serviceWorker' in navigator) {
     })
  }
 
+setTimeout(() => {
+    const img = new Image();
+    img.src = '/always.jpeg';
+    document.body.appendChild(img);
+}, 5000);
+
 // This code executes in its own worker or thread
 self.addEventListener("install", event => {
-    // this event is triggered
+    // this event triggers only once the tab is opened
+    // if n tabs are opened, this will be triggered n times on the begining
     console.log("Service worker installed");
  });
  self.addEventListener("activate", event => { 
