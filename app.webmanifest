@@ -6,13 +6,13 @@
       {
         "src": "/mohit.png",
         "sizes": "1080x1080",
-        "type": "image/png",
+        "type": "image/x-icon",
         "purpose" : "any"
       },
       {
         "src": "/mohit.png",
         "sizes": "1080x1080",
-        "type": "image/png",
+        "type": "image/x-icon",
         "purpose" : "maskable"
 
       }
