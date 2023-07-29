@@ -6,7 +6,15 @@
       {
         "src": "mohit.png",
         "sizes": "1080x1080",
-        "type": "image/png"
+        "type": "image/png",
+        "purpose" : "any"
+      },
+      {
+        "src": "mohit.png",
+        "sizes": "1080x1080",
+        "type": "image/png",
+        "purpose" : "maskable"
+
       }
     ],
     "start_url": "/",
