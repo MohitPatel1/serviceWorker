@@ -4,13 +4,19 @@
     "description": "Even after all this time Internet is gone, I will be there",
     "icons": [
       {
-        "src": "mohit32.jpg",
+        "src": "mohit32.png",
         "sizes": "32x32",
         "type": "image/png"},      
       {
-        "src": "mohit512.jpg",
+        "src": "mohit512.png",
         "sizes": "512x512",
         "type": "image/png"
+      },
+      {
+        "src": "mohit512.png",
+        "sizes": "512x512",
+        "type": "image/png",
+        "purpose": "maskable"
       }],
     "start_url": "/",
     "display": "standalone",
