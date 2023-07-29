@@ -2,19 +2,15 @@
     "name": "Mohit",
     "short_name": "Mohit",
     "description": "Even after all this time Internet is gone, I will be there",
-    "icons": [
+    "icons": [     
       {
-        "src": "mohit32.png",
-        "sizes": "32x32",
-        "type": "image/png"},      
-      {
-        "src": "mohit512.png",
-        "sizes": "512x512",
+        "src": "mohit.png",
+        "sizes": "1080x1080",
         "type": "image/png"
       },
       {
-        "src": "mohit512.png",
-        "sizes": "512x512",
+        "src": "mohit.png",
+        "sizes": "1080x1080",
         "type": "image/png",
         "purpose": "maskable"
       }],
