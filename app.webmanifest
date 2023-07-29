@@ -1,30 +1,26 @@
 {
-  "name": "Mohit",
-  "short_name": "Mohit",
-  "description": "Even after all this time, when the Internet is gone, I will be there",
-  "icons": [
-    {
-      "src": "/mohit.png",
-      "sizes": "1080x1080",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "/mohit.png",
-      "sizes": "1080x1080",
-      "type": "image/png",
-      "purpose": "maskable"
-    }
-  ],
-  "start_url": ".",
-  "display": "standalone",
-  "scope": "/",
-  "orientation": "any",
-  "theme_color": "#B12A34",
-  "background_color": "#B12A34",
-  "serviceworker": {
-    "src": "/sw.js"
-  },
-  "lang": "en",
-  "dir": "ltr"
-}
+    "name": "Mohit",
+    "short_name": "Mohit",
+    "description": "Even after all this time Internet is gone, I will be there",
+    "icons": [     
+      {
+        "src": "/mohit.png",
+        "sizes": "1080x1080",
+        "type": "image/x-icon",
+        "purpose" : "any"
+      },
+      {
+        "src": "/mohit.png",
+        "sizes": "1080x1080",
+        "type": "image/x-icon",
+        "purpose" : "maskable"
+
+      }
+    ],
+    "start_url": ".",
+    "display": "standalone",
+    "theme_color": "#B12A34",
+    "background_color": "#B12A34",
+    "id" : "expecto-patronum"
+  }
+  
