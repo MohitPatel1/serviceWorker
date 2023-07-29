@@ -6,14 +6,12 @@
       {
         "src": "mohit.jpg",
         "sizes": "32x32",
-        "type": "image/jpg"
-      },      
+        "type": "image/jpg"},      
       {
         "src": "mohit.jpg",
         "sizes": "512x512",
         "type": "image/jpg"
-      }
-    ],
+      }],
     "start_url": "index.html",
     "display": "fullscreen",
     "theme_color": "#B12A34",
