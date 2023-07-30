@@ -2,21 +2,18 @@
     "name": "Mohit",
     "short_name": "Mohit",
     "description": "Even after all this time Internet is gone, I will be there",
-    "icons": [     
+    "icons": [
       {
-        "src": "/mohit.png",
-        "sizes": "1080x1080",
-        "type": "image/x-icon",
-        "purpose" : "any"
+          "src": "/android-chrome-192x192.png",
+          "sizes": "192x192",
+          "type": "image/png"
       },
       {
-        "src": "/mohit.png",
-        "sizes": "1080x1080",
-        "type": "image/x-icon",
-        "purpose" : "maskable"
-
+          "src": "/android-chrome-512x512.png",
+          "sizes": "512x512",
+          "type": "image/png"
       }
-    ],
+  ],
     "start_url": ".",
     "display": "standalone",
     "theme_color": "#B12A34",
