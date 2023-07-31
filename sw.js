@@ -66,3 +66,8 @@ self.addEventListener('fetch', event => {
         })
     )
 })
+
+onmessage = (e) => {
+   const result = e.data[0] + e.data[1];
+   postMessage(result)
+}
