@@ -13,22 +13,21 @@ setTimeout(() => {
     document.body.appendChild(img);
 }, 3000);
 
-setTimeout(() => {
-    const img = new Image();
-    img.src = 'https://static0.gamerantimages.com/wordpress/wp-content/uploads/2023/07/harry-potter-snape-patronus.jpg';
-    document.body.appendChild(img);
-}, 3000);
-
 // This code executes in its own worker or thread
 self.addEventListener("install", event => {
     // this event triggers only once the tab is opened
     // if n tabs are opened, this will be triggered n times on the begining
+
+    // self.skipWaiting() forces a service worker to activate immediately
+    self.skipWaiting();
     console.log("Service worker installed");
  });
+
  self.addEventListener("activate", event => { 
     // this event is not being triggered 
     console.log("Service worker activated");
-    clients.claim()
+    // waitUntil() tells the browser that work is ongoing until the promise settles, and it shouldn't terminate the service worker if it wants that work to complete.
+    event.waitUntil(clients.claim());
  });
 
 const urlsToCache = ["/", 'sw.js', "index.html", "always.jpeg", "afterAllThisTime.jpeg"];
@@ -66,8 +65,4 @@ self.addEventListener('fetch', event => {
             return cacheResponse || fetch(event.request);
         })
     )
-
-    // caches.match(event.request.url).then(res => {
-    //     console.log(res ? res : 'not found in cache')
-    // })
 })
