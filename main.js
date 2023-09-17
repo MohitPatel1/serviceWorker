@@ -12,4 +12,4 @@ if (window.Worker){
     }
 }else {
     console.log('Your browser doesn\'t support web workers.');
-  }
+}
